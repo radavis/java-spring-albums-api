@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+database_name=${FLYWAY_URL##*/}
+
+mysql -e "drop database $database_name;"
+mysql -e "drop user '$FLYWAY_USER'@'localhost';"
+mysql -e "flush privileges;"

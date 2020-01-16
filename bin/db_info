@@ -1,0 +1,7 @@
+#!/bin/bash
+
+database_name=${FLYWAY_URL##*/}
+
+mysql -e "show databases like '$database_name';"
+mysql -e "select host, user from mysql.user where user like '$FLYWAY_USER';"
+mysql -e "show grants for '$FLYWAY_USER'@'localhost';"

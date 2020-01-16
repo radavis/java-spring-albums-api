@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+# Setup MySQL database w/ a Bash script: https://stackoverflow.com/a/33474729/2675670
+
+database_name=${FLYWAY_URL##*/}
+
+mysql -e "create database $database_name;"
+mysql -e "create user '$FLYWAY_USER'@'localhost' identified by '$FLYWAY_PASSWORD';"
+mysql -e "grant all privileges on $database_name.* to '$FLYWAY_USER'@'localhost';"
+mysql -e "flush privileges;"
