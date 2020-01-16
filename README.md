@@ -1,6 +1,6 @@
 # albums app
 
-CRUD Albums with Spring Boot and MySQL.
+~CRUD~ Create and Read a list of Albums with Spring Boot and MySQL.
 
 Inspired by the [Spring MySQL getting started guide](https://spring.io/guides/gs/accessing-data-mysql/).
 
@@ -16,4 +16,4 @@ curl localhost:8080/albums \
 
 ## View Albums
 
-Visit <http://localhost:8080/albums>.
+Visit <http://localhost:8080/albums>
