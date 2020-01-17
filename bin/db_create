@@ -3,9 +3,9 @@ set -e
 
 # Setup MySQL database w/ a Bash script: https://stackoverflow.com/a/33474729/2675670
 
-database_name=${FLYWAY_URL##*/}
+database_name=${SPRING_DATASOURCE_URL##*/}
 
 mysql -e "create database $database_name;"
-mysql -e "create user '$FLYWAY_USER'@'localhost' identified by '$FLYWAY_PASSWORD';"
-mysql -e "grant all privileges on $database_name.* to '$FLYWAY_USER'@'localhost';"
+mysql -e "create user '$SPRING_DATASOURCE_USERNAME'@'localhost' identified by '$SPRING_DATASOURCE_PASSWORD';"
+mysql -e "grant all privileges on $database_name.* to '$SPRING_DATASOURCE_USERNAME'@'localhost';"
 mysql -e "flush privileges;"

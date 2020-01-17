@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-database_name=${FLYWAY_URL##*/}
+database_name=${SPRING_DATASOURCE_URL##*/}
 
 mysql -e "drop database $database_name;"
-mysql -e "drop user '$FLYWAY_USER'@'localhost';"
+mysql -e "drop user '$SPRING_DATASOURCE_USERNAME'@'localhost';"
 mysql -e "flush privileges;"
